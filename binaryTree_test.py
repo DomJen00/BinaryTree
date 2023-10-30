@@ -37,7 +37,19 @@ class BinTreeTestMethods(unittest.TestCase):
         result = bt.contains(exampleData[mid_index])
 
         # Then it should return True
-        self.assertTrue(result)    
+        self.assertTrue(result)   
+
+    def test_should_return_false_if_no_element_is_existing(self):
+        # Given a binary tree with empty example data
+        exampleData = []
+        bt = BinTree(exampleData)
+
+        # When searched for a element in empty data list
+        result = bt.contains(0)
+
+        # Then it should return False
+        self.assertFalse(result)
+
 
     def test_should_return_false_if_element_is_not_existing(self):
         # Given a binary tree with example data
